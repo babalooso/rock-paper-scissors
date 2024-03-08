@@ -29,6 +29,14 @@ function playRound (playerSelection, computerSelection) {
     }
     }
 
+function playGame() {
+    playRound();
+    playRound();
+    playRound();
+    playRound();
+    playRound();
+}
+
     
     
 
