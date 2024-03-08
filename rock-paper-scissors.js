@@ -7,10 +7,11 @@ const choices = ["Rock", "Paper", "Scissors"];
 
 const computerSelection = getComputerChoice();
 
-const playerSelection = prompt("Make your selection");
-playerSelection = playerSelection.toLowerCase();
+const playerSelection = prompt("Make your selection: Rock, paper, or scissors?");
+
 
 function playRound (playerSelection, computerSelection) {
+    playerSelection = playerSelection.toLowerCase();
     if (playerSelection === "Paper" && computerSelection === "Rock") {
         return "You win! Paper beats rock.";
     } else if (playerSelection === "Paper" && computerSelection === "Scissors") {
