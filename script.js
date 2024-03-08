@@ -7,8 +7,7 @@ const choices = ["rock", "paper", "scissors"];
 
 
 function getPlayerChoice() {
-    let playerChoice = prompt("Rock, paper, or scissors?");
-    return playerChoice.toLowerCase();
+    let playerChoice = prompt("Rock, paper, or scissors?").toLowerCase();
 }
 
 
