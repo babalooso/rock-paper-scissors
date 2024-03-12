@@ -58,8 +58,8 @@ const determineWinner = (playerChoice, computerChoice) => {
 
 
 
-const playGame = () => {
-    const playerChoice = getPlayerChoice('bomb');
+const playRound = () => {
+    const playerChoice = getPlayerChoice('paper');
     const computerChoice = getComputerChoice();
     console.log(`You threw: ${playerChoice}`);
     console.log(`The computer threw: ${computerChoice}`);
@@ -67,9 +67,24 @@ const playGame = () => {
     console.log(determineWinner(playerChoice, computerChoice));
 };
     
+const playGame = () => {
+    console.log(playRound());
+    console.log(playRound());
+    console.log(playRound());    
+    console.log(playRound());
+    console.log(playRound());
+}
+
 playGame();
 
+//let's try to figure out how to keep score.
+//break this up into rounds. round 1, 2, 3, 4, 5. 
+//whoever wins more rounds wins it all. 
+//if user gets a "You win" message they get a point?
+//if computer gets a "Sorry, computer won" it gets point?
+//
 
+//}
 
 //const choices = ["rock", "paper", "scissors"];
 
