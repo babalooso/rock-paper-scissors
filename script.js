@@ -59,7 +59,7 @@ const determineWinner = (playerChoice, computerChoice) => {
 
 
 const playRound = () => {
-    const playerChoice = getPlayerChoice('paper');
+    const playerChoice = getPlayerChoice();
     const computerChoice = getComputerChoice();
     console.log(`You threw: ${playerChoice}`);
     console.log(`The computer threw: ${computerChoice}`);
@@ -68,12 +68,29 @@ const playRound = () => {
 };
     
 const playGame = () => {
-    prompt("Choose your weapon: rock, paper, or scissors?");
+    let win = "You win!";
+    let loss = "Sorry, computer won.";
+    
     console.log(playRound());
     console.log(playRound());
     console.log(playRound());    
     console.log(playRound());
     console.log(playRound());
+
+    let numberOfWins = (win.match(/to/g) || []).length;
+    let numberOfLosses = (loss.match(/to/g) || []).length;
+
+    const result = () => {
+
+     if (numberOfWins > numberOfLosses) {
+        return "You won the game!";
+    } else {
+        return "You lost!";
+    };
+   
+};
+
+    console.log(result());
 }
 
 playGame();
@@ -84,8 +101,22 @@ playGame();
 //if user gets a "You win" message they get a point?
 //if computer gets a "Sorry, computer won" it gets point?
 //start each round with prompt. but need to rework definition of userInput. userInput = prompt(tktkt).toLowerCase
+//ok i think that actually worked. but how to push out a 'final score' message? 
+// if userScore > computerScore then return "Congratulations, you won the game!"
+// else "Sorry, the computer won. Try again next time."
+//but how to calculate? if number of times "You win" appears > than number of times "Sorry" appears?
+//const result = () => {
+// get number of x "You win" (y). get number of x "Sorry" (z). if y > z return "you won the game!"; else "you lost!"
+// let victory = "You win!"; let defeat = "Sorry, computer won!"
+//try using match method?
+// let numberOfWins = (victory.match(/to/g) || []).length
+//return(numberOfWins)
+// let numberOfLosses = (defeat.match(/to/g) || []).length
+//return(numberOfLosses)
+//if (numberOfWins > numberOfLosses) return "You won the game!"
+//else "You lost!"
 
-//}
+// function countString
 
 //const choices = ["rock", "paper", "scissors"];
 
