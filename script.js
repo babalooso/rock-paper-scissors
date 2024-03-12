@@ -68,8 +68,8 @@ const playRound = () => {
 };
     
 const playGame = () => {
-    let win = "You win!";
-    let loss = "Sorry, computer won.";
+    //let win = "You win!";
+   // let loss = "Sorry, computer won.";
     
     console.log(playRound());
     console.log(playRound());
@@ -77,23 +77,44 @@ const playGame = () => {
     console.log(playRound());
     console.log(playRound());
 
-    let numberOfWins = (win.match(/to/g) || []).length;
-    let numberOfLosses = (loss.match(/to/g) || []).length;
+    const winMessage = "You win!"; 
+    const loseMessage = "You lose!";
 
-    const result = () => {
+    const calcWin = match(winMessage).count();
+    const calcLose = match(loseMessage).count();
 
-     if (numberOfWins > numberOfLosses) {
-        return "You won the game!";
-    } else if (numberOfWins === numberOfLosses) {
-        return "It's a tie!";
+    if (calcWin > calcLose) {
+        console.log("Congrats! You're the winner!");
     } else {
-        return "You lost :(";
-    }
+        console.log("You lost. Try again next time.");
+    };
+
+// const calcWin = winMessage.match;
+// const calcLoss = loseMessage.match;
+// const result = () => {
+    //if (calcWin > calcLoss) {
+        //console.log("You won the game! Congrats!");
+    //} else {
+        //console.log("You lost :(");
+    //};
+
+    //let numberOfWins = (win.match(/to/g) || []).length;
+   // let numberOfLosses = (loss.match(/to/g) || []).length;
+
+    //const result = () => {
+
+     //if (numberOfWins > numberOfLosses) {
+      //  return "You won the game!";
+   // } else if (numberOfWins === numberOfLosses) {
+       // return "It's a tie!";
+   // } else {
+       // return "You lost :(";
+   // }
    
 };
 
-    console.log(result());
-}
+    //console.log(result());
+
 
 playGame();
 
@@ -118,27 +139,12 @@ playGame();
 //if (numberOfWins > numberOfLosses) return "You won the game!"
 //else "You lost!"
 
-// function countString
-
-//const choices = ["rock", "paper", "scissors"];
-
-//function getComputerChoice() {
-   // return choices[Math.floor(Math.random() * choices.length)];
-//}
+//OR 
+//};
+//OK I DON'T THINK MATCH IS RIGHT EITHER...NEED A FUNCTION THAT TOTALS NUMBER OF STRING OCCCURRENCES IN A CODE
 
 
 
-//const playerChoice = getPlayerChoice();
-//const computerChoice = getComputerChoice();
 
 
-//function playRound(playerChoice, computerChoice) {
-        //if (computerChoice === playerChoice) {
-        //return ("It's a tie!");
-    //} else if ((computerChoice === "rock" && playerChoice === "scissors") || (computerChoice === "scissors" && playerChoice==="papler")
-    //|| (computerChoice === "paper" && playerChoice === "rock")) {
-       // return ("You lose! You chose " + "${playerChoice}" + " but the computer chose " + "${computerChoice}")
-    //} else {
-      //  return ("You win! You chose " + "${playerChoice}" + " and the computer chose " + "${computerChoice}");
-    //}
-//}
+
