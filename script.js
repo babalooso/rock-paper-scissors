@@ -21,37 +21,48 @@ const getComputerChoice = () => {
     }
 }
 
+let playerPoints = 0;
+let computerPoints = 0;
+
 const determineWinner = (playerChoice, computerChoice) => {
+    
     if (playerChoice === computerChoice) {
         return "It's a tie!";
     }
 
     if (playerChoice === "rock") {
         if (computerChoice === "paper") {
+            computerPoints++;
             return "Sorry, computer won.";
         } else {
+            playerPoints++;
             return "You win!";
         }
     }
 
     if (playerChoice === "paper") {
         if (computerChoice === "scissors") {
+            computerPoints++;
             return "Sorry, computer won.";
         } else {
+            playerPoints++;
             return "You win!";
         }
     }
 
     if (playerChoice === "scissors") {
         if (computerChoice === "rock") {
+            computerPoints++;
             return "Sorry, computer won.";
 
         } else {
+            playerPoints++;
             return "You win!";
         };
     }
         
     if (playerChoice === "bomb") {
+        playerPoints++;
         return "You threw: bomb. You win automatically!";
     }
     }
@@ -63,31 +74,60 @@ const playRound = () => {
     const computerChoice = getComputerChoice();
     console.log(`You threw: ${playerChoice}`);
     console.log(`The computer threw: ${computerChoice}`);
-
     console.log(determineWinner(playerChoice, computerChoice));
 };
     
+
+
+
+
+
+
 const playGame = () => {
-    //let win = "You win!";
-   // let loss = "Sorry, computer won.";
     
     console.log(playRound());
-    console.log(playRound());
-    console.log(playRound());    
-    console.log(playRound());
-    console.log(playRound());
+    console.log(`Player points: ${playerPoints} Computer points: ${computerPoints}`);
 
-    const winMessage = "You win!"; 
-    const loseMessage = "You lose!";
+    console.log(playRound());
+    console.log(`Player points: ${playerPoints} Computer points: ${computerPoints}`);
 
-    const calcWin = match(winMessage).count();
-    const calcLose = match(loseMessage).count();
+    console.log(playRound());   
+    console.log(`Player points: ${playerPoints} Computer points: ${computerPoints}`);
+ 
+    console.log(playRound());
+    console.log(`Player points: ${playerPoints} Computer points: ${computerPoints}`);
 
-    if (calcWin > calcLose) {
-        console.log("Congrats! You're the winner!");
+    console.log(playRound());
+    console.log(`Player points: ${playerPoints} Computer points: ${computerPoints}`);
+
+    if (playerPoints > computerPoints) {
+        console.log("Woohoo! You won the game.");
     } else {
-        console.log("You lost. Try again next time.");
-    };
+        console.log("Better luck next time, my dude.");
+    }
+};
+
+
+   // const result = () => {
+
+    
+        //const calcWin = winMessage.count();
+       // const calcLose = loseMessage.count();
+    
+        //if (calcWin > calcLose) {
+         //  console.log("Congrats! You're the winner!");
+       // } else {
+         //  console.log("You lost. Try again next time.");
+      // };
+  //  };
+
+    //console.log(result());
+
+
+
+
+
+
 
 // const calcWin = winMessage.match;
 // const calcLoss = loseMessage.match;
@@ -111,7 +151,7 @@ const playGame = () => {
        // return "You lost :(";
    // }
    
-};
+
 
     //console.log(result());
 
