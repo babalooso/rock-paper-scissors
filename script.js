@@ -1,6 +1,6 @@
 
 const getPlayerChoice = userInput => {
-    userInput = userInput.toLowerCase();
+    userInput = prompt("Choose your weapon: Rock, paper, or scissors?").toLowerCase();
     if (userInput === "rock" || userInput === "paper" || userInput === "scissors" || userInput === "bomb") {
         return userInput;   
     } else {
@@ -68,6 +68,7 @@ const playRound = () => {
 };
     
 const playGame = () => {
+    prompt("Choose your weapon: rock, paper, or scissors?");
     console.log(playRound());
     console.log(playRound());
     console.log(playRound());    
@@ -77,12 +78,12 @@ const playGame = () => {
 
 playGame();
 
-//let's try to figure out how to keep score.
+//let's try to figure out how to keep score. also new opp. for user to make new choice each round??
 //break this up into rounds. round 1, 2, 3, 4, 5. 
 //whoever wins more rounds wins it all. 
 //if user gets a "You win" message they get a point?
 //if computer gets a "Sorry, computer won" it gets point?
-//
+//start each round with prompt. but need to rework definition of userInput. userInput = prompt(tktkt).toLowerCase
 
 //}
 
