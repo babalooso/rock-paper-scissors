@@ -84,9 +84,11 @@ const playGame = () => {
 
      if (numberOfWins > numberOfLosses) {
         return "You won the game!";
+    } else if (numberOfWins === numberOfLosses) {
+        return "It's a tie!";
     } else {
-        return "You lost!";
-    };
+        return "You lost :(";
+    }
    
 };
 
